@@ -7,7 +7,7 @@
         this.mainGauche=mainGauche
     }
     seDeplacer = (lieuD, lieuA)=>{
-        lieuD.personnes.splice(0,lieuD.length)
+        lieuD.personnes.splice(0,1)
         lieuA.personnes.push(this);
         this.lieu=lieuA.nom;
     }
@@ -15,7 +15,9 @@
         this.argent-=article.prix;
     }
     couper =(ingredient, outil) =>{
-        ingredient.etat=outil.action
+       if(ingredient.etat=="entier" && ingredient.nom!=="Oeufs"){
+        ingredient.etat=outil.action  
+       } 
     }
 }
 
@@ -72,7 +74,7 @@ export class Poele {
     }
     melanger = (nomMelange) => {
         let newMelange = new Produits(nomMelange, "pas cuit");
-        console.log(newMelange.nom);
+        console.log(`apres avoir melangé le tout nous avons le debut d'une ${newMelange.nom}`);
         this.contenu.splice(0,this.contenu.length);
         this.contenu.push(newMelange); 
         
