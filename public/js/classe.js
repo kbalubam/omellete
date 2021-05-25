@@ -12,7 +12,7 @@
         this.lieu=lieuA.nom;
     }
     payerArticle = (article) =>{
-
+        this.argent-=article.prix;
     }
     couper =(ingredient, outil) =>{
         ingredient.etat=outil.action
