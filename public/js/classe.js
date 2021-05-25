@@ -62,7 +62,8 @@ export class Poele {
         this.contenu=contenu
     }
     cuir = ()=>{
-        setTimeout(()=> {this.contenu[0].etat}, 4000)
+        setTimeout(()=> {this.contenu[0].etat="cuit"}, 4000)
+        
     }
 }
  export class Bol {
@@ -70,8 +71,13 @@ export class Poele {
          this.contenu=contenu
     }
     melanger = (nomMelange) => {
-        let newMelange = new Produits(nomMelange, "pas cuit");  
+        let newMelange = new Produits(nomMelange, "pas cuit");
+        console.log(newMelange.nom);
+        this.contenu.splice(0,this.contenu.length);
+        this.contenu.push(newMelange); 
+        
     }
  }
+ 
 
 

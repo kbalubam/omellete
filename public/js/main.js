@@ -19,7 +19,7 @@ let fromage = new Produits("Fromage", "entier", 3);
 
 let epice = new Produits("epice", "moulu", 1);
 
-let lait = new Produits("Lait", "entier", 2);
+let lait = new Produits("Lait", "liquide", 2);
  
 let oeuf = new Produits("Oeufs", "entier", 3);
  
@@ -72,7 +72,14 @@ for ( let l = 0; l < recipient.contenu.length; l++){
     if(recipient.contenu[l].nom=="entier"){
         couper(recipient.contenu[l], couteau);
     }
+
 }
+recipient.melanger("omelette");
+Tefal.contenu.push(recipient.contenu[0]);
+console.log(Tefal.contenu);
+Tefal.cuir(Tefal.contenu[0]);
+console.log(Tefal.contenu);
+
 
 
 
